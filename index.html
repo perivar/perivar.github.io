@@ -1,0 +1,48 @@
+<html>
+<head>
+    <title>jquery-countdown plugin test</title>
+    <link href="css/media.css" rel="stylesheet" type="text/css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/jquery.countdown.clean.js"></script>
+    <script>
+        $(function() {
+
+            $('#counter1').countdown({
+                stepTime: 60,
+                format: 'hh:mm:ss',
+                startTime: "10:30:00",
+                timerEnd: function() {
+                    alert('counter 1 end!!');
+                },
+                image: "img/digits.png"
+            });
+
+            $('#counter2').countdown({
+                stepTime: 60,
+                digitWidth: 34,
+                digitHeight: 45,
+                format: 'hh:mm:ss',
+                startTime: "00:00:10",
+                timerEnd: function() {
+                    alert('counter 2 end!!');
+                },
+                image: "img/digits_small.png"
+            });
+
+            $('#counter3').countdown({
+                image: "img/digits.png",
+                format: "hh:mm:ss",
+                endTime: new Date('2017/02/12 19:00:00'),
+                timerEnd: function() {
+                    alert('counter 3 end!!');
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id='counter1'></div>
+    <div id='counter2'></div>
+    <div id='counter3'></div>
+</body>
+</html>
