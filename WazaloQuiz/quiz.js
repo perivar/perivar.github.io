@@ -314,7 +314,7 @@ jQuery(document).ready(function($) {
     }
 
     function scrollQuizInToView(e) {
-        var i = $(e).offset().top + -100;
+        var i = $(e).offset().top;
         0 > i && (i = 0), $("html, body").animate({
             scrollTop: i
         }, 300)
