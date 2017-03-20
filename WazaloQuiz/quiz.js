@@ -342,9 +342,9 @@ jQuery(document)
 					url: e,
 					type: "POST",
 					data: {
+						action: "fca_qc_add_to_mailing_list",
 						nonce: s,
 						post_id: i,
-						action: "fca_qc_add_to_mailing_list",
 						email: t,
 						name: n,
 						result: c
@@ -367,9 +367,9 @@ jQuery(document)
 					url: e,
 					type: "POST",
 					data: {
+						action: "fca_qc_activity",
 						nonce: i,
 						quiz_id: s,
-						action: "fca_qc_activity",
 						type: t
 					}
 				})
@@ -383,9 +383,9 @@ jQuery(document)
 					url: e,
 					type: "POST",
 					data: {
+						action: "fca_qc_add_result_ajax",
 						nonce: i,
 						quiz_id: s,
-						action: "fca_qc_add_result_ajax",
 						result: t
 					}
 				})
@@ -399,11 +399,11 @@ jQuery(document)
 					url: e,
 					type: "POST",
 					data: {
+						action: "fca_qc_add_response_ajax",
 						nonce: i,
 						quiz_id: s,
 						question: t,
-						response: n,
-						action: "fca_qc_add_response_ajax"
+						response: n
 					}
 				})
 				.done(function(e) {
@@ -418,13 +418,13 @@ jQuery(document)
 					url: e.ajaxurl,
 					type: "POST",
 					data: {
+						action: "fca_qc_send_responses_ajax",
 						nonce: e.nonce,
 						quiz_id: e.quiz_id,
 						name: s,
 						email: t,
 						result: i,
-						responses: e.responses,
-						action: "fca_qc_send_responses_ajax"
+						responses: e.responses
 					}
 				})
 				.done(function(e) {
