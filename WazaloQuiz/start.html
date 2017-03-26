@@ -21,7 +21,7 @@
 				<button type="button" class="waz_qc_button waz_qc_start_button">Start Quiz</button>
 				<div class="flip-container waz_qc_quiz_div" style="display: none; height: 200px;">
 					<div class="waz-qc-flipper">
-						<div class="waz-qc-front" id="waz_qc_answer_container" style="height: 200px;"><p id="waz_qc_question">Spørsmål</p><img class="waz_qc_quiz_question_img" src=""><div class="waz_qc_answer_div waz-qc-threeup" data-question="1" style="height: auto;"><img class="waz_qc_quiz_answer_img" src="" style="margin-bottom: 0px;"><span class="waz_qc_answer_span"></span></div><div class="waz_qc_answer_div waz-qc-threeup" data-question="2" style="height: auto;"><img class="waz_qc_quiz_answer_img" src="" style="margin-bottom: 0px;"><span class="waz_qc_answer_span"></span></div><div class="waz_qc_answer_div waz-qc-threeup" data-question="3" style="height: auto;"><img class="waz_qc_quiz_answer_img" src="" style="margin-bottom: 0px;"><span class="waz_qc_answer_span"></span></div><div class="waz_qc_answer_div waz-qc-threeup" data-question="4" style="height: auto;"><img class="waz_qc_quiz_answer_img" src="" style="margin-bottom: 0px;"><span class="waz_qc_answer_span"></span></div></div> 
+						<div class="waz-qc-front" id="waz_qc_answer_container" style="height: 200px;"><p id="waz_qc_question">Spørsmål</p><img class="waz_qc_quiz_question_img" src=""><div class="waz_qc_answer_div waz-qc-threeup" data-question="1" style="height: auto;"><img class="waz_qc_quiz_answer_img" src="" style="margin-bottom: 0px;"><span class="waz_qc_answer_span"></span></div><div class="waz_qc_answer_div waz-qc-threeup" data-question="2" style="height: auto;"><img class="waz_qc_quiz_answer_img" src="" style="margin-bottom: 0px;"><span class="waz_qc_answer_span"></span></div><div class="waz_qc_answer_div waz-qc-threeup" data-question="3" style="height: auto;"><img class="waz_qc_quiz_answer_img" src="" style="margin-bottom: 0px;"><span class="waz_qc_answer_span"></span></div><div class="waz_qc_answer_div waz-qc-threeup" data-question="4" style="height: auto;"><img class="waz_qc_quiz_answer_img" src="" style="margin-bottom: 0px;"><span class="waz_qc_answer_span"></span></div></div>
 						<div class="waz-qc-back" id="waz_qc_back_container" style="height: 200px;"><p id="waz_qc_question_right_or_wrong"></p><img class="waz_qc_quiz_question_img" src=""><span id="waz_qc_question_back"></span><p id="waz_qc_back_response_p" class="waz_qc_back_response">Ditt svar: <span id="waz_qc_your_answer"></span></p><p id="waz_qc_correct_answer_p" class="waz_qc_back_response">Riktig svar: <span id="waz_qc_correct_answer"></span></p><button type="button" class="waz_qc_next_question">Neste</button></div>
 					</div>
 				</div>
@@ -41,45 +41,41 @@
 <link rel="stylesheet" id="waz_qc_tooltipster_stylesheet-css" href="tooltipster.bundle.min.css" type="text/css" media="all">
 <link rel="stylesheet" id="waz_qc_tooltipster_borderless_css-css" href="tooltipster-sideTip-borderless.min.css" type="text/css" media="all">
 <script type="text/javascript">
-var quizData_9999 = {"quiz_id":"9999","quiz_meta":{"desc":"Ikke sikker på hvilken kosedress som passer deg best? Prøv denne quizzen!","desc_img_src":"suitcase.jpg","title":"Er du en skummel tiger, en kosete gris eller kanskje noe helt annet?"},
+var quizData_9999 = {"quiz_id":"9999","quiz_meta":{"desc":"Ikke sikker på hvilken kosedress som passer deg best? Prøv denne quizzen!","desc_img_src":"test_din_personlighet.jpg","title":"Er du en skummel tiger, en kosete gris eller kanskje noe helt annet?"},
 "questions":[
-{"question":"Hvilket dyr føler du deg mest som?","img":"","answers":[
-{"answer":"Katt","img":"images/quiz-thumbimg-animal1.jpg","results":["svar1"]},
-{"answer":"Kylling","img":"images/quiz-thumbimg-animal2.jpg","results":["svar2"]},
-{"answer":"Mus","img":"images/quiz-thumbimg-animal3.jpg","results":["svar3"]},
-{"answer":"Marsvin","img":"images/quiz-thumbimg-animal4.jpg","results":["svar4"]},
-{"answer":"Hund","img":"images/quiz-thumbimg-animal5.jpg","results":["svar5"]},
-{"answer":"Kanin","img":"images/quiz-thumbimg-animal6.jpg","results":["svar6"]}
+{"question":"Hvilket dyr liker du best?","img":"","answers":[
+{"answer":"Søt katt","img":"images/quiz-thumbimg-animal1.jpg","results":["svar1"]},
+{"answer":"Koselig kylling","img":"images/quiz-thumbimg-animal2.jpg","results":["svar2"]},
+{"answer":"Snill mus","img":"images/quiz-thumbimg-animal3.jpg","results":["svar3"]},
+{"answer":"Nydelig marsvin","img":"images/quiz-thumbimg-animal4.jpg","results":["svar4"]},
+{"answer":"Tøff hund","img":"images/quiz-thumbimg-animal5.jpg","results":["svar5"]},
+{"answer":"Lodden kanin","img":"images/quiz-thumbimg-animal6.jpg","results":["svar6"]}
 ]},
 {"question":"Hva synes du om dansing?","img":"","answers":[
 {"answer":"Jeg er en dansemaskin","img":"images/quiz-thumbimg-dance1.png","results":["svar2-1"]},
-{"answer":"Født til å danse","img":"images/quiz-thumbimg-dance2.png","results":["svar2-2"]},
-{"answer":"Bare for teitinger","img":"images/quiz-thumbimg-dance3.png","results":["svar2-3"]},
-{"answer":"Hater det","img":"images/quiz-thumbimg-dance4.png","results":["svar2-4"]},
-{"answer":"Danser som en ku","img":"images/quiz-thumbimg-dance5.png","results":["svar2-5"]},
-{"answer":"Tja","img":"images/quiz-thumbimg-dance6.png","results":["svar2-6"]}
+{"answer":"Jeg er født til å danse","img":"images/quiz-thumbimg-dance2.png","results":["svar2-2"]},
+{"answer":"Dansing er for teitinger","img":"images/quiz-thumbimg-dance3.png","results":["svar2-3"]},
+{"answer":"Tja...","img":"images/quiz-thumbimg-dance6.png","results":["svar2-4"]}
 ]},
-{"question":"Hvordan ser din mest ideelle dag ut?","img":"","answers":[
+{"question":"Hva er din perfekte dag?","img":"","answers":[
 {"answer":"Være på stranda","img":"images/beach.jpg","results":["3-1a"]},
 {"answer":"Kose meg på cafe","img":"images/coffee.jpg","results":["3-2a","3-2b","3-2c"]},
 {"answer":"Shopping","img":"images/shopping.jpg","results":["3-3a","3-3b"]},
 {"answer":"Stå på ski","img":"images/ski.jpg","results":["3-4"]}
 ]},
 {"question":"Hva ville du tatt med deg til en øde øy?","img":"","answers":[
-{"answer":"Potetgull","img":"images/quiz-thumbimg-island1.jpg","results":["4-1"]},
-{"answer":"Solkrem","img":"images/quiz-thumbimg-island2.jpg","results":["4-2"]},
-{"answer":"Vann","img":"images/quiz-thumbimg-island3.jpg","results":["4-3a","4-3b"]},
-{"answer":"Kosebamse","img":"images/quiz-thumbimg-island4.jpg","results":["4-4"]},
-{"answer":"Bok","img":"images/quiz-thumbimg-island5.jpg","results":["4-5"]},
-{"answer":"Hund","img":"images/quiz-thumbimg-island6.jpg","results":["4-6"]}
+{"answer":"En pose med potetgull","img":"images/quiz-thumbimg-island1.jpg","results":["4-1"]},
+{"answer":"En tube med solkrem","img":"images/quiz-thumbimg-island2.jpg","results":["4-2"]},
+{"answer":"Masse vann","img":"images/quiz-thumbimg-island3.jpg","results":["4-3a","4-3b"]},
+{"answer":"En deilig kosebamse","img":"images/quiz-thumbimg-island4.jpg","results":["4-4"]},
+{"answer":"En favorittbok","img":"images/quiz-thumbimg-island5.jpg","results":["4-5"]},
+{"answer":"En snill hund","img":"images/quiz-thumbimg-island6.jpg","results":["4-6"]}
 ]},
 {"question":"Hva er det mest sannsynlig at du gjør på en fest?","img":"","answers":[
 {"answer":"Holder på med mobilen","img":"images/quiz-thumbimg-party1.png","results":["5-1"]},
-{"answer":"Danser","img":"images/quiz-thumbimg-party2.png","results":["5-2"]},
+{"answer":"Danser masse","img":"images/quiz-thumbimg-party2.png","results":["5-2"]},
 {"answer":"Prater med alle","img":"images/quiz-thumbimg-party3.png","results":["5-3"]},
-{"answer":"Spiser godteri","img":"images/quiz-thumbimg-party4.png","results":["5-4"]},
-{"answer":"Drar hjem","img":"images/quiz-thumbimg-party5.png","results":["5-5"]},
-{"answer":"Er litt sur","img":"images/quiz-thumbimg-party6.png","results":["5-6"]}
+{"answer":"Spiser godteri","img":"images/quiz-thumbimg-party4.png","results":["5-4"]}
 ]},
 {"question":"Hvilken farge liker du best?","img":"","answers":[
 {"answer":"Rosa","img":"images/quiz-thumbimg-color1.png","results":["6-1"]},
@@ -92,9 +88,11 @@ var quizData_9999 = {"quiz_id":"9999","quiz_meta":{"desc":"Ikke sikker på hvilk
 "quiz_results":[
 {"title":"Spenstig Rosa Enhjørning","desc":"Enhjørninger er blide, tøffe og spenstige. De elsker sukkerspinn. De rosa enhjørningene elsker å være hjemme med familien og spesielt hjemmelaget pizza.","img":"images/enhjørning - sukkerspinnrosa.jpg","id":"unicorn-pink"},
 {"title":"Rask Blå og Hvit Enhjørning","desc":"Enhjørninger er blide, tøffe og spenstige. De elsker sukkerspinn. De blå enhjørningene elsker å reise og oppleve nye steder.","img":"images/enhjørning - himmelblå og hvit.jpg","id":"unicorn-blue-and-white"},
-{"title":"Kosegris","desc":"Griser er kjempekule dyr. Du tror kanskje grisene er grisete, men neida noen griser passer på å være pene og pyntelige. Kort sagt - griser er kuule dyr. Grynt Grynt!","img":"images/lyserosa gris.jpg","id":"pink-pig"},
-{"title":"Kjempekoselig Panda","desc":"Pandaer, både små og store elsker å kose. De elsker å slappe av og ikke gjøre noen ting. De er også snille og rolige og ikke så gode til å danse.","img":"images/panda.jpg","id":"panda"},
-{"title":"Spicy Drage","desc":"Drager elsker å fly og besøke nye steder. Drager liker sterk mat, både meksikansk og indisk mat er blant favorittene. Drager er også utrolig snille og greie, bortsett fra morgenen. Da kan de være litt morgengretten!","img":"images/drage.jpg","id":"dragon"}
+{"title":"Kosegris","desc":"Griser er kjempekule dyr. Du tror kanskje griser er grisete, men neida de fleste griser passer på å være pene og pyntelige. Kort sagt - griser er kuule dyr. Grynt Grynt!","img":"images/lyserosa gris.jpg","id":"pink-pig"},
+{"title":"Kjempekoselig Panda","desc":"Pandaer, både små og store elsker å kose. De elsker å slappe av og ikke gjøre noen ting. De er også snille og rolige og utrolig gode til å danse.","img":"images/panda.jpg","id":"panda"},
+{"title":"Spicy Drage","desc":"Drager elsker å fly og besøke nye steder. Drager liker sterk mat, både meksikansk og indisk mat er blant favorittene. Drager er også utrolig snille og greie, bortsett fra på morgenen. Da kan de være litt morgengretne!","img":"images/drage.jpg","id":"dragon"},
+{"title":"Spretten Tiger","desc":"Denne tigeren elsker å sprette. Sprette høyt og lavt, både innendørs og utendørs. Alltid like glad og en veldig god venn. Bompi-bomp!","img":"images/tigergutt.jpg","id":"tiger"},
+{"title":"Honningbjørn","desc":"Bjørner er fantastiske dyr. Denne bjøren elsker honning, både til frokost, lunsj, middag og kvelds. Og gjerne som et mellom-måltid også. Bjørner er veldig kosete og elsker å vente lenge med å stå opp i helgene.","img":"images/bjørn.jpg","id":"bear"}
 ],
 "quiz_settings":{"quiz_type":"pt","hide_answers":"after","shuffle_questions":"","restart_button":"on","show_sharing":"on","show_facebook":"on","show_twitter":"on","show_pinterest":"on","show_email":"on"},
 "wrong_string":"Feil!","correct_string":"Riktig!","your_answer_string":"Ditt svar:","correct_answer_string":"Riktig svar:",

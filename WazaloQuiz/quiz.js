@@ -1,4 +1,5 @@
-jQuery(document).ready(function($) {
+jQuery(document)
+	.ready(function($) {
 		function detectIE() {
 			var e = window.navigator.userAgent,
 				i = e.indexOf("MSIE ");
@@ -59,10 +60,11 @@ jQuery(document).ready(function($) {
 		}
 
 		function get_quiz_id(e) {
-			var i = $(e).attr("id");
+			var i = $(e)
+				.attr("id");
 			return i ? i.replace(/\D+/g, "") : !1
 		}
-
+		
 		// quiz_type is either "pt" - personality test
 		// or "mc" - normal quiz
 		function showQuestion(e) {
@@ -125,7 +127,8 @@ jQuery(document).ready(function($) {
 			var i = 0;
 			return $.each(e, function(s) {
 				e.eq(s)
-					.outerHeight() > i && (i = e.eq(s).outerHeight())
+					.outerHeight() > i && (i = e.eq(s)
+						.outerHeight())
 			}), i
 		}
 
@@ -286,28 +289,24 @@ jQuery(document).ready(function($) {
 				}), $(e.selector)
 				.find(".waz_qc_submit_email_button")
 				.click(function() {
-					var s = $(e.selector)
-						.find("#waz_qc_email_input")
-						.val(),
-						t = $(e.selector)
-						.find("#waz_qc_name_input")
-						.val(),
-						n = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/,
-						c = n.test(s),
-						r = "" !== t || 0 === $(e.selector)
+					var user_email = $(e.selector).find("#waz_qc_email_input").val(),
+						user_name = $(e.selector).find("#waz_qc_name_input").val(),
+						regexp = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/,
+						email_check = regexp.test(user_email),
+						r = "" !== user_name || 0 === $(e.selector)
 						.find("#waz_qc_name_input")
 						.length;
 					$(e.selector)
 						.find(".waz_qc_optin_input")
-						.removeClass("waz_qc_invalid"), e.selector.offsetWidth = e.selector.offsetWidth, c && r ? ($(document)
+						.removeClass("waz_qc_invalid"), e.selector.offsetWidth = e.selector.offsetWidth, email_check && r ? ($(document)
 							.unbind("keypress"), $(e.selector)
 							.find(".waz_qc_optin_input")
 							.tooltipster("close"), e.user = {
-								name: t,
-								email: s
-							}, add_to_mailing_list(e.ajaxurl, e.quiz_id, e.nonce, s, t, result), $(e.selector)
+								name: user_name,
+								user_email: user_email
+							}, add_to_mailing_list(e.ajaxurl, e.quiz_id, e.nonce, user_email, user_name, result), $(e.selector)
 							.find(".waz_qc_optin_container")
-							.hide(), show_sharing_and_result_screen(e, result)) : (c ? ($(e.selector)
+							.hide(), show_sharing_and_result_screen(e, result)) : (email_check ? ($(e.selector)
 							.find("#waz_qc_email_input")
 							.tooltipster("close"), $(e.selector)
 							.find("#waz_qc_email_input")
@@ -336,14 +335,14 @@ jQuery(document).ready(function($) {
 				})
 		}
 
-		function add_to_mailing_list(ajaxurl, post_id, nonce, email, name, result) {
-			return -1 !== optins.indexOf(post_id) ? (console.log("already opted in for this quiz!"), !1) : (optins.push(post_id), void $.ajax({
+		function add_to_mailing_list(ajaxurl, quiz_id, nonce, email, name, result) {
+			return -1 !== optins.indexOf(quiz_id) ? (console.log("already opted in for this quiz!"), !1) : (optins.push(quiz_id), void $.ajax({
 					url: ajaxurl,
 					type: "POST",
 					data: {
 						action: "waz_qc_add_to_mailing_list",
 						nonce: nonce,
-						post_id: post_id,
+						quiz_id: quiz_id,
 						email: email,
 						name: name,
 						result: result
@@ -353,7 +352,7 @@ jQuery(document).ready(function($) {
 					console.log(ajaxurl)
 				}))
 		}
-
+		
 		// inform the server about an activity
 		// ajaxurl is the url to the server app 
 		// nonce is the number used once
@@ -552,7 +551,8 @@ jQuery(document).ready(function($) {
 		loadQuizzes(), preloadImages(), $(".waz_qc_start_button")
 			.click(function() {
 				var e = quizzes[get_quiz_id($(this).closest(".waz_qc_quiz"))];
-				add_activity(e.ajaxurl, e.nonce, e.quiz_id, "starts"), usingIE && ieFix(e.selector), e.currentQuestion = 0, e.score = 0, e.responses = [], e.questionCount = e.questions.length, e.hideAnswers = "" === e.quiz_settings.hide_answers ? "after" : "on" === e.quiz_settings.hide_answers ? "end" : e.quiz_settings.hide_answers, $(this)
+				add_activity(e.ajaxurl, e.nonce, e.quiz_id, "starts"),
+					usingIE && ieFix(e.selector), e.currentQuestion = 0, e.score = 0, e.responses = [], e.questionCount = e.questions.length, e.hideAnswers = "" === e.quiz_settings.hide_answers ? "after" : "on" === e.quiz_settings.hide_answers ? "end" : e.quiz_settings.hide_answers, $(this)
 					.siblings(".waz_qc_quiz_title")
 					.hide(), $(this)
 					.siblings(".waz_qc_quiz_description")
@@ -581,15 +581,15 @@ jQuery(document).ready(function($) {
 			}), $(".waz_qc_answer_div")
 			.click(function() {
 				var e = quizzes[get_quiz_id($(this).closest(".waz_qc_quiz"))];
-				scrollQuizInToView(e.selector), $(this).blur();
-				var i = $(this)
-					.closest("#waz_qc_answer_container")
-					.data("id"),
-					s = $(this)
-					.data("id"),
+				scrollQuizInToView(e.selector), 
+				$(this).blur();
+					
+				var i = $(this).closest("#waz_qc_answer_container").data("id"),
+					s = $(this).data("id"),
 					t = !1;
-				$(this)
-					.attr("data-question") === e.currentAnswer && (e.score = e.score + 1, t = !0);
+					
+				$(this).attr("data-question") === e.currentAnswer && (e.score = e.score + 1, t = !0);
+				
 				var n = {
 					answer: addQuizImg($(this)
 							.children(".waz_qc_quiz_answer_img")
@@ -603,8 +603,9 @@ jQuery(document).ready(function($) {
 						.siblings("#waz_qc_question")
 						.html()
 				};
-				if (e.responses.push(n), add_response(e.ajaxurl, e.nonce, e.quiz_id, i, s), "pt" == e.quiz_settings.quiz_type) $.each($(this)
-					.data("results"),
+				
+				if (e.responses.push(n), add_response(e.ajaxurl, e.nonce, e.quiz_id, n.question, n.answer), "pt" == e.quiz_settings.quiz_type) 
+					$.each($(this).data("results"),
 					function(i, s) {
 						$.each(e.quiz_results, function(e, i) {
 							s == i.id && (i.score = i.hasOwnProperty("score") ? i.score + 1 : 1)
