@@ -1,11 +1,13 @@
 jQuery(document)
 	.ready(function($) {
 		function detectIE() {
-			var e = window.navigator.userAgent,
-				i = e.indexOf("MSIE ");
-			if (i > 0) return !0;
-			var s = e.indexOf("Trident/");
-			return s > 0 ? !0 : !1
+			var uagent = window.navigator.userAgent,
+				msie = uagent.indexOf("MSIE ");
+			if (msie > 0) return !0;
+			
+			// also check IE 11
+			var trident = uagent.indexOf("Trident/");
+			return trident > 0 ? !0 : !1
 		}
 
 		function ieFix(e) {
@@ -21,15 +23,18 @@ jQuery(document)
 		function loadQuizzes() {
 			$(".waz_qc_quiz")
 				.each(function(index) {
+					// for each quiz section load the associated data and set the selector and default image
 					var thisId = get_quiz_id(this);
 					thisId && (quizzes[thisId] = eval("quizData_" + thisId), quizzes[thisId].selector = this, default_img = quizzes[thisId].default_img)
 				}), $.each(quizzes, function(e) {
 					$.each(quizzes[e].questions, function(i) {
+						// only care for questions that have answers that have values. Add (splice) each of the questions to the questions array
 						quizzes[e].questions[i].answers = quizzes[e].questions[i].answers.filter(function(e) {
 							return "" !== e.answer || "" !== e.img
 						}), quizzes[e].questions[i].hasOwnProperty("answers") && 0 !== quizzes[e].questions[i].answers.length || quizzes[e].questions.splice(i)
 					})
 				}), $.each(quizzes, function(e) {
+					// and shuffle if neccesary
 					"on" == quizzes[e].quiz_settings.shuffle_questions && (quizzes[e].questions = shuffleArray(quizzes[e].questions))
 				})
 		}
@@ -65,8 +70,7 @@ jQuery(document)
 			return i ? i.replace(/\D+/g, "") : !1
 		}
 		
-		// quiz_type is either "pt" - personality test
-		// or "mc" - normal quiz
+		// quiz_type is either "pt" - personality test or "mc" - normal quiz
 		function showQuestion(e) {
 			if (e.currentQuestion < e.questionCount) {
 				$(e.selector)
@@ -94,6 +98,7 @@ jQuery(document)
 				e.currentQuestion + 1 < e.questionCount ? lazyLoadQuestion(e.questions[e.currentQuestion + 1]) : lazyLoadResults(e), $(e.selector)
 					.find(".waz_qc_answer_div")
 					.hide();
+					
 				for (var c = 0; c < n.length; c++)("" !== n[c].img || "" !== n[c].answer) && ("mc" == e.quiz_settings.quiz_type && n[c].answer == t.answer && n[c].img == t.img && (e.currentAnswer = $(e.selector)
 						.find(".waz_qc_answer_div")
 						.eq(c)
@@ -115,6 +120,7 @@ jQuery(document)
 					.find(".waz_qc_answer_div")
 					.eq(c)
 					.show());
+					
 				$(e.selector)
 					.find("#waz_qc_answer_container")
 					.waitForImages(function() {
